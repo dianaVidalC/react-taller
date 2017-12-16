@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import ProductForm from './components/ProductForm.jsx';
-import ProductRow from './components/ProductRow.jsx';
+import Dialogo from './components/dialogo/index.jsx';
+import SearchBar from './components/SearchBar/index'
 
 var arrayProductos = [{nombre:'computadora', precio:'1000'},
                     {nombre:'impresora', precio:'500'},
@@ -21,12 +22,18 @@ class App extends Component {
     }
 
     onChangeValue(ev){
-        debugger;
+        //debugger;
         var nombre = ev.target.value;
 
         this.setState({
             name:nombre
         })
+    }
+ /*   componentShouldUpdate(){
+
+    }*/
+    componentDidMount(){
+
     }
 
   render() {
@@ -46,6 +53,8 @@ class App extends Component {
           <br/>
           <br/>
           <label style={{textAlign:'center', color:'green'}}>{this.state.name}</label>
+          < Dialogo/>
+          <SearchBar/>
       </div>
     );
   }
